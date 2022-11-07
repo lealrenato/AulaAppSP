@@ -19,12 +19,6 @@ public class MainActivity extends AppCompatActivity {
     int codigoProduto;
     float precoProduto;
     boolean estoque;
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,5 +34,25 @@ public class MainActivity extends AppCompatActivity {
         codigoProduto = 12;
         precoProduto = 2500.00f;
         estoque = true;
+
+
+        dados.putString("nomeProduto",nomeProduto);
+        dados.putInt("codigoProduto",codigoProduto);
+        dados.putFloat("precoProduto",precoProduto);
+        dados.putBoolean("estoque",estoque);
+
+        //dados.clear();
+        //dados.apply();
+
+        //dados.remove("estoque");
+        //dados.apply();
+
+        Log.d(TAG, "onCreate: produto: "+sharedPreferences.getString("nomeProduto",""));
+        Log.d(TAG, "onCreate: codigo: "+sharedPreferences.getInt("codigoProduto",-1));
+        Log.d(TAG, "onCreate: estoque: "+sharedPreferences.getBoolean("estoque",false));
+        Log.d(TAG, "onCreate: produto: "+sharedPreferences.getFloat("precoProduto",-1.0f));
+
+
+
     }
 }
